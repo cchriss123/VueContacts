@@ -2,7 +2,8 @@
 </script>
 
 <template>
-  <main>
-    Home
-  </main>
+  <div>Reg</div>
 </template>
+
+<style>
+</style>
