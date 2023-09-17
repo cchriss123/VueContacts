@@ -21,7 +21,7 @@ const router = createRouter({
 
 
       // @ts-ignore
-      component: () => import('../views/RegView.vue')
+      component: () => import('../views/AddContactView.vue')
     }
   ]
 })
