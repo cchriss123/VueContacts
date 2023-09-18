@@ -9,12 +9,13 @@ import AddContactView from "@/views/AddContactView.vue";
 export interface Contact {
   name: string;
   email: string;
+  date: Date;
 }
 
 const contacts: Contact[] = [
-  { name: 'John Doe' , email: 'John@mockmail.com'},
-  { name: 'Jane Doe' , email: 'Jane@mockmail.com'},
-  { name: 'Gunnar' , email: 'Gunnar@mockmail.com'},
+  { name: 'Jesper' , email: 'John@mockmail.com' , date: new Date()},
+  { name: 'Anna' , email: 'Anna@mockmail.com' , date: new Date()},
+  { name: 'Gunnar' , email: 'Gunnar@mockmail.com' , date: new Date()},
 ];
 
 

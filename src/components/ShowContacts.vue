@@ -1,17 +1,32 @@
 <script setup lang="ts">
 import type {Contact} from "@/App.vue";
-
+import {ref} from "vue";
 const props = defineProps<{ contacts: Contact[]}>();
+let isSortedByName = ref(true);
 
+// consider to use computed instead
+function sortedList() {
+  const contactsCopy = [...props.contacts];
+  if (isSortedByName.value)
+    return contactsCopy.sort((a, b) => a.name.localeCompare(b.name));
+
+  return contactsCopy.reverse()
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return `${date.toLocaleDateString()}`;
+}
+
+function toggleSorting() {
+  isSortedByName.value = !isSortedByName.value;
+}
 
 </script>
 
-
-
-
-
 <template>
-  <div v-for="contact in props.contacts" :key="contact.id">
-    <div>{{ contact.name }}, {{ contact.email }}</div>
+  <button @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
+  <div v-for="(contact, i) in sortedList()" :key="i">
+    <div>{{ contact.name }}, {{ contact.email }}, {{ formatDate(contact.date) }}</div>
   </div>
 </template>
