@@ -6,9 +6,7 @@ const emit = defineEmits(['sendContact']);
 
 <template>
   <h3>Add contact View</h3>
-  <div><AddContact
-      :contacts="contacts"
-      @sendContact="contact => emit('sendContact', contact)"/></div>
+  <div><AddContact :contacts="contacts" @sendContact="contact => emit('sendContact', contact)"/></div>
 </template>
 
 <style>

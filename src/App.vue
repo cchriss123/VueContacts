@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import AddContactView from "@/views/AddContactView.vue";
-
-
-
-
+import {ref} from "vue";
+defineEmits(['sendContact', 'deleteContact']);
 
 export interface Contact {
   name: string;
@@ -12,29 +9,30 @@ export interface Contact {
   date: Date;
 }
 
-const contacts: Contact[] = [
+const contacts = ref<Contact[]>([
   { name: 'Jesper' , email: 'John@mockmail.com' , date: new Date()},
   { name: 'Anna' , email: 'Anna@mockmail.com' , date: new Date()},
   { name: 'Gunnar' , email: 'Gunnar@mockmail.com' , date: new Date()},
-];
-
-
-const emit = defineEmits(['sendContact']);
+]);
 
 function addNewContact(newContact: Contact) {
-  contacts.push(newContact);
-  console.log(contacts);
+  contacts.value.push(newContact);
 }
+
+function deleteContact(email: string) {
+  contacts.value = contacts.value.filter(existingContact => existingContact.email !== email);
+}
+
+
+
 
 </script>
 
 <template>
-
   <h3>Contacts</h3>
   <div><RouterLink to="/">Home</RouterLink></div>
   <div><RouterLink to="/about">Add Contact</RouterLink></div>
-  <RouterView :contacts="contacts" @sendContact="addNewContact"/>
-
+  <RouterView :contacts="contacts" @sendContact="addNewContact" @deleteContact="deleteContact"/>
 </template>
 
 <style scoped>
