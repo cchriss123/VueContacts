@@ -1,24 +1,29 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import AddContactView from "@/views/AddContactView.vue";
+
+
+
 
 
 export interface Contact {
-  id: number;
   name: string;
   email: string;
 }
 
 const contacts: Contact[] = [
-  { id: 1, name: 'John Doe' , email: 'John@mockmail.com'},
-  { id: 2, name: 'Jane Doe' , email: 'Jane@mockmail.com'},
-  { id: 3, name: 'Gunnar' , email: 'Gunnar@mockmail.com'},
+  { name: 'John Doe' , email: 'John@mockmail.com'},
+  { name: 'Jane Doe' , email: 'Jane@mockmail.com'},
+  { name: 'Gunnar' , email: 'Gunnar@mockmail.com'},
 ];
 
 
+const emit = defineEmits(['sendContact']);
 
-
-
-
+function addNewContact(newContact: Contact) {
+  contacts.push(newContact);
+  console.log(contacts);
+}
 
 </script>
 
@@ -27,8 +32,7 @@ const contacts: Contact[] = [
   <h3>Contacts</h3>
   <div><RouterLink to="/">Home</RouterLink></div>
   <div><RouterLink to="/about">Add Contact</RouterLink></div>
-  <div><RouterView :contacts="contacts"/></div>
-
+  <RouterView :contacts="contacts" @sendContact="addNewContact"/>
 
 </template>
 

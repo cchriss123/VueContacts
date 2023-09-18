@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import AddContact from "@/components/AddContact.vue";
+defineProps(['contacts']);
+const emit = defineEmits(['sendContact']);
 </script>
 
 <template>
   <h3>Add contact View</h3>
-  <div>Add contact</div>
+  <div><AddContact
+      :contacts="contacts"
+      @sendContact="contact => emit('sendContact', contact)"/></div>
 </template>
 
 <style>
