@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import AddContact from "@/components/AddContact.vue";
 defineProps(['contacts']);
-const emit = defineEmits(['sendContact']);
+defineEmits(['sendContact']);
 </script>
 
 <template>
   <h3>Add contact View</h3>
-  <div><AddContact :contacts="contacts" @sendContact="contact => emit('sendContact', contact)"/></div>
+  <div><AddContact :contacts="contacts" @sendContact="contact => $emit('sendContact', contact)"/></div>
 </template>
 
 <style>

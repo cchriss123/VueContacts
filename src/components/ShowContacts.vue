@@ -2,10 +2,9 @@
 import type {Contact} from "@/App.vue";
 import {ref} from "vue";
 const props = defineProps<{ contacts: Contact[]}>();
-const emit = defineEmits(['deleteContact']);
+defineEmits(['deleteContact']);
 let isSortedByName = ref(true);
 
-// consider to use computed instead
 function sortedList() {
   const contactsCopy = [...props.contacts];
   if (isSortedByName.value)
@@ -34,6 +33,6 @@ function toggleSorting() {
   <button @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
   <div v-for="(contact, i) in sortedList()" :key="i">
     <div>{{ contact.name }}, {{ contact.email }}, {{ formatDate(contact.date) }}</div>
-    <div><button @click="() => emit('deleteContact', contact.email)">Delete</button></div>
+    <div><button @click="$emit('deleteContact', contact.email)">Delete</button></div>
   </div>
 </template>
