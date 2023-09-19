@@ -21,6 +21,7 @@ function addContact() {
 </script>
 
 <template>
+  <div class="content-container">
   <form @submit.prevent="addContact">
     <label for="name">Name</label>
     <input v-model="contact.name" placeholder="Enter name" type="text" required>
@@ -29,19 +30,38 @@ function addContact() {
 
     <button type="submit">Add Contact</button>
   </form>
-  <div>{{ addContactMessage}}</div>
+    <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
+  </div>
 </template>
 
 <style scoped>
 
+.content-container {
+  width: 95%;
+  display: flex;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
 form {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
   padding: 20px;
   background-color: rgb(53, 53, 53);
   border-radius: 10px;
   margin-top: 20px;
+}
+
+.add-message {
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: rgb(53, 53, 53);
+  border-radius: 10px;
 }
 
 input[type="text"],
@@ -65,15 +85,17 @@ button[type="submit"]  {
   font-size: 14px;
   padding: 6px 30px;
   text-decoration: none;
-  //margin-left: auto;
-  //margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 button[type="submit"]:hover {
   background-color: rgb(73, 73, 73);
 }
 
-
-
-
+@media screen and (min-width: 600px) {
+  .content-container {
+    width: 500px;
+  }
+}
 </style>
