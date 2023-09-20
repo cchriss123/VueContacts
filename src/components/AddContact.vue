@@ -22,6 +22,7 @@ function addContact() {
 
 <template>
   <div class=" content-container">
+
     <div class="form-container">
     <form @submit.prevent="addContact">
       <label for="name">Name</label>
@@ -29,37 +30,56 @@ function addContact() {
       <label for="email">Email</label>
       <input v-model="contact.email" placeholder="Enter email" type="email" required>
 
+
       <button type="submit">Add Contact</button>
     </form>
       <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
     </div>
+
+    <div class="picture-container"><img src="../assets/mailbox.jpg" alt="mailbox"></div>
+
   </div>
 </template>
 
 <style scoped>
 
 .content-container {
-  //border: white solid 2px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
 }
 
-.form-container {
+.form-container,
+.picture-container{
   width: 95%;
   display: flex;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
+
 
 
 }
 
+.picture-container {
+  display: none;
+  border-radius: 10px;
+
+}
+
 form {
+
   display: flex;
+
   flex-wrap: wrap;
+
   padding: 20px;
   background-color: rgb(53, 53, 53);
   border-radius: 10px;
-  margin-top: 20px;
+
+
 }
 
 .add-message {
@@ -76,10 +96,12 @@ input[type="email"] {
   width: 100%;
   height: 30px;
   background-color: rgb(36, 36, 36);
-  border-radius: 8px;
+  border-radius: 10px;
   color: white;
   font-size: 16px;
   margin-bottom: 20px;
+
+
 }
 
 button[type="submit"]  {
@@ -94,21 +116,35 @@ button[type="submit"]  {
   text-decoration: none;
   margin-left: auto;
   margin-right: auto;
-
+  height: 36px;
 }
 button[type="submit"]:hover {
   background-color: rgb(73, 73, 73);
 }
 
 @media screen and (min-width: 600px) {
-  .form-container {
-    width: 50%;
+  .form-container,
+  .picture-container{
+    width: calc(50% - 5px);
     margin-left: 0;
+    height: 280px;
   }
   .content-container{
     width: 95%;
     margin-right: auto;
     margin-left: auto;
+    gap: 10px;
+  }
+
+  .picture-container {
+    display: block;
+    overflow: hidden;
+  }
+
+  .picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   @media screen and (min-width: 1000px) {
@@ -116,8 +152,5 @@ button[type="submit"]:hover {
       width: 60%;
     }
   }
-
-
-
 }
 </style>
