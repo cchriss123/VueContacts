@@ -51,6 +51,7 @@ function deleteContact(email: string) {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
+  //border: white solid 2px;
 
 
 }
@@ -111,7 +112,5 @@ function deleteContact(email: string) {
   .topContainer{
     width: 60%;
   }
-
-
 }
 </style>

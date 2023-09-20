@@ -22,17 +22,18 @@ function toggleSorting() {
   isSortedByName.value = !isSortedByName.value;
 }
 
-
-
-
 </script>
 
 <template>
-  <div class="content-container">
-    <button class="sort" @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
-    <div v-for="(contact, i) in sortedList()" :key="i">
-      <div>{{ contact.name }}, {{ contact.email }}, {{ formatDate(contact.date) }}</div>
-      <div><button @click="$emit('deleteContact', contact.email)">Delete</button></div>
+  <div class="form-container">
+    <div class="sort-container">
+      <button class="sort" @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
+    </div>
+    <div class="info-container" v-for="(contact, i) in sortedList()" :key="i">
+      <div>{{ contact.name }}</div>
+      <div>{{ contact.email }}</div>
+      <div>{{ formatDate(contact.date)}}</div>
+      <button class="delete" @click="$emit('deleteContact', contact.email)">Delete</button>
     </div>
   </div>
 </template>
@@ -40,13 +41,13 @@ function toggleSorting() {
 
 <style scoped>
 
-.content-container {
+.form-container {
   width: 95%;
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto 40px;
+
 }
 
 .sort {
@@ -59,9 +60,64 @@ function toggleSorting() {
   font-size: 14px;
   padding: 6px 30px;
   text-decoration: none;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+}
+
+.sort:hover, .delete:hover {
+  background-color: rgb(73, 73, 73);
+}
+
+.sort-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+
+.info-container{
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 14px;
+  color: white;
+  width: calc(100%);
+  background-color: rgb(36,36,36);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+.info-container > div {
+  display: flex;
+  flex-direction: column;
+  //overflow-wrap: break-word;
+}
+
+
+.delete{
+  color: white;
+  background-color: rgb(53, 53, 53);
+  border-radius: 30px;
+  border: 2px solid rgb(73, 73, 73);
+  border-right-color: rgb(36, 36, 36);
+  border-bottom-color: rgb(36, 36, 36);
+  font-size: 14px;
+  padding: 6px 30px;
+  margin-left: auto;
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+  .sort {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .info-container{
+    width: calc(33% - 5px);
+  }
 }
 
 
@@ -69,13 +125,12 @@ function toggleSorting() {
 
 
 @media screen and (min-width: 1000px) {
-  .content-container{
+  .form-container{
     width: 60%;
+  }
+  .info-container{
+    width: calc(33% - 5px);
   }
 
 }
-
-
-
-
 </style>

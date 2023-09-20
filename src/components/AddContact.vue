@@ -21,22 +21,29 @@ function addContact() {
 </script>
 
 <template>
-  <div class="content-container">
-  <form @submit.prevent="addContact">
-    <label for="name">Name</label>
-    <input v-model="contact.name" placeholder="Enter name" type="text" required>
-    <label for="email">Email</label>
-    <input v-model="contact.email" placeholder="Enter email" type="email" required>
+  <div class=" content-container">
+    <div class="form-container">
+    <form @submit.prevent="addContact">
+      <label for="name">Name</label>
+      <input v-model="contact.name" placeholder="Enter name" type="text" required>
+      <label for="email">Email</label>
+      <input v-model="contact.email" placeholder="Enter email" type="email" required>
 
-    <button type="submit">Add Contact</button>
-  </form>
-    <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
+      <button type="submit">Add Contact</button>
+    </form>
+      <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 
 .content-container {
+  //border: white solid 2px;
+
+}
+
+.form-container {
   width: 95%;
   display: flex;
   margin-top: 20px;
@@ -93,9 +100,24 @@ button[type="submit"]:hover {
   background-color: rgb(73, 73, 73);
 }
 
-@media screen and (min-width: 500px) {
-  .content-container {
-    width: 400px;
+@media screen and (min-width: 600px) {
+  .form-container {
+    width: 50%;
+    margin-left: 0;
   }
+  .content-container{
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .content-container{
+      width: 60%;
+    }
+  }
+
+
+
 }
 </style>
