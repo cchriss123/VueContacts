@@ -5,7 +5,6 @@ defineProps(['contacts']);
 </script>
 
 <template>
-  <h3>Home View</h3>
-  <div>
-    <ShowContacts :contacts="contacts" @deleteContact="contact => emit('deleteContact', contact)"/></div>
+
+  <div><ShowContacts :contacts="contacts" @deleteContact="contact => emit('deleteContact', contact)"/></div>
 </template>

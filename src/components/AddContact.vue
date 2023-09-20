@@ -93,9 +93,9 @@ button[type="submit"]:hover {
   background-color: rgb(73, 73, 73);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .content-container {
-    width: 500px;
+    width: 400px;
   }
 }
 </style>

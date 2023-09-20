@@ -5,9 +5,7 @@ defineEmits(['sendContact']);
 </script>
 
 <template>
-
   <div><AddContact :contacts="contacts" @sendContact="contact => $emit('sendContact', contact)"/></div>
 </template>
 
-<style>
-</style>
+

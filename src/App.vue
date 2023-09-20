@@ -50,7 +50,9 @@ function deleteContact(email: string) {
   height: 150px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:space-between;
+
+
 }
 
 .home a, .add a {
@@ -89,6 +91,19 @@ function deleteContact(email: string) {
   }
   .home{
     order: -1;
+    text-align: left;
+  }
+  .topContainer{
+    width: 95%;
+  }
+  .topContainer-outer{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .add{
+    text-align: right;
   }
 }
 
@@ -96,10 +111,7 @@ function deleteContact(email: string) {
   .topContainer{
     width: 60%;
   }
-  .topContainer-outer{
-    display: flex;
-    justify-content: center;
 
-  }
+
 }
 </style>
