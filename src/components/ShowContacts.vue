@@ -27,7 +27,7 @@ function toggleSorting() {
 <template>
   <div class="form-container">
     <div class="sort-container">
-      <button class="sort" @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
+      <button class="sort" @click="toggleSorting">{{ isSortedByName ? "Sorted by name" : "Sorted by date" }}</button>
     </div>
     <div class="info-container" v-for="(contact, i) in sortedList()" :key="i">
       <div>Name: {{ contact.name }}</div>

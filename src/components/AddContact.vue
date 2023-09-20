@@ -5,7 +5,7 @@ const props = defineProps<{ contacts: Contact[]}>();
 const emit = defineEmits(['sendContact']);
 const addContactMessage = ref('');
 
-let contact = ref<Contact>({ name: '', email: '' , date: new Date()});
+let contact = ref<Contact>({ name: '', email: '' , number: '', date: new Date()});
 
 function addContact() {
 
@@ -16,7 +16,7 @@ function addContact() {
 
   addContactMessage.value = `${contact.value.name} was added to your contacts`;
   emit('sendContact', contact.value);
-  contact = ref<Contact>({ name: '', email: '' , date: new Date()});
+  contact = ref<Contact>({ name: '', email: '' , number: '', date: new Date()});
 }
 </script>
 
