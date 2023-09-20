@@ -8,8 +8,9 @@ body {
     color: rgb(255, 255, 255);
 
     background-color: rgb(42,42,42);
-    /*background: linear-gradient(to bottom, rgb(55,50,90), rgb(11, 10, 18) ) no-repeat fixed;*/
+
     /*background-color: rgb(10, 10, 30);*/
+    /*background: linear-gradient(to bottom, rgb(20, 20, 60), rgb(5, 5, 15) ) no-repeat fixed;*/
 
     background-size: cover;
 }

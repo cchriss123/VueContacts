@@ -6,14 +6,16 @@ defineEmits(['sendContact', 'deleteContact']);
 export interface Contact {
   name: string;
   email: string;
+  number: string;
   date: Date;
 }
 
 const contacts = ref<Contact[]>([
-  { name: 'Jesper' , email: 'John@mockmail.com' , date: new Date()},
-  { name: 'Anna' , email: 'Anna@mockmail.com' , date: new Date()},
-  { name: 'Gunnar' , email: 'Gunnar@mockmail.com' , date: new Date()},
-]);
+  { name: 'Jesper' , email: 'Jesper@mockmail.com' , number: '0701234567' , date: new Date()},
+  { name: 'John' , email: 'John@mockmail.com' , number: '0731234567' , date: new Date()},
+  { name: 'Sara' , email: 'Sara@gmail.com' , number: '0761234567' , date: new Date()},
+  { name: 'Anna' , email: 'Anna@mockmail.com' , number: '0706456546' , date: new Date()},
+  { name: 'Gunnar' , email: 'Gunnar@hotmail.com' , number: '0701234567' , date: new Date()}]);
 
 function addNewContact(newContact: Contact) {
   contacts.value.push(newContact);

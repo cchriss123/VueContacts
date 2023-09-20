@@ -30,9 +30,10 @@ function toggleSorting() {
       <button class="sort" @click="toggleSorting">{{ isSortedByName ? "Sort by Most Recent" : "Sort by Name" }}</button>
     </div>
     <div class="info-container" v-for="(contact, i) in sortedList()" :key="i">
-      <div>{{ contact.name }}</div>
-      <div>{{ contact.email }}</div>
-      <div>{{ formatDate(contact.date)}}</div>
+      <div>Name: {{ contact.name }}</div>
+      <div>Email: {{ contact.email }}</div>
+      <div>Number: {{ contact.number }}</div>
+      <div>Date added: {{ formatDate(contact.date)}}</div>
       <button class="delete" @click="$emit('deleteContact', contact.email)">Delete</button>
     </div>
   </div>
@@ -116,21 +117,19 @@ function toggleSorting() {
     margin-left: 0;
   }
   .info-container{
-    width: calc(33% - 5px);
+    width: calc(50% - 5px);
   }
 }
-
-
-
-
 
 @media screen and (min-width: 1000px) {
   .form-container{
     width: 60%;
   }
+}
+
+@media screen and (min-width: 1300px) {
   .info-container{
     width: calc(33% - 5px);
   }
-
 }
 </style>

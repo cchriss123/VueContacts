@@ -29,14 +29,16 @@ function addContact() {
       <input v-model="contact.name" placeholder="Enter name" type="text" required>
       <label for="email">Email</label>
       <input v-model="contact.email" placeholder="Enter email" type="email" required>
+      <label for="number">Number</label>
+      <input v-model="contact.number" placeholder="Enter number" type="text" pattern="\d{3,}" maxlength="18" required>
 
 
       <button type="submit">Add Contact</button>
     </form>
-      <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
     </div>
-
     <div class="picture-container"><img src="../assets/mailbox.jpg" alt="mailbox"></div>
+    <div class="add-message" v-if="addContactMessage">{{ addContactMessage}}</div>
+
 
   </div>
 </template>
@@ -84,11 +86,17 @@ form {
 
 .add-message {
   margin-top: 20px;
+  margin-left: 2.5%;
+
   color: white;
   font-size: 20px;
   padding: 10px 20px;
   background-color: rgb(53, 53, 53);
   border-radius: 10px;
+
+
+
+
 }
 
 input[type="text"],
@@ -127,7 +135,7 @@ button[type="submit"]:hover {
   .picture-container{
     width: calc(50% - 5px);
     margin-left: 0;
-    height: 280px;
+    height: 300px;
   }
   .content-container{
     width: 95%;
@@ -145,6 +153,10 @@ button[type="submit"]:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .add-message {
+    margin-left: 0;
   }
 
   @media screen and (min-width: 1000px) {
