@@ -35,7 +35,7 @@ function deleteContact(email: string) {
     <div class="topContainer">
       <div class="header-outer"><h1>Contacts</h1></div>
       <div class="home"><RouterLink to="/">Home</RouterLink></div>
-      <div class="add"><RouterLink to="/about">Add </RouterLink></div>
+      <div class="add"><RouterLink to="/add">Add </RouterLink></div>
     </div>
   </div>
 
