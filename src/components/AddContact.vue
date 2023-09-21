@@ -78,7 +78,7 @@ form {
   flex-wrap: wrap;
 
   padding: 20px;
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(25, 25, 75);
   border-radius: 10px;
 
 
@@ -91,7 +91,7 @@ form {
   color: white;
   font-size: 20px;
   padding: 10px 20px;
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(25, 25, 75);
   border-radius: 10px;
 
 
@@ -103,7 +103,7 @@ input[type="text"],
 input[type="email"] {
   width: 100%;
   height: 30px;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(10, 10, 30);
   border-radius: 10px;
   color: white;
   font-size: 16px;
@@ -114,11 +114,13 @@ input[type="email"] {
 
 button[type="submit"]  {
   color: white;
-  background-color: rgb(53, 53, 53);
+
   border-radius: 30px;
-  border: 2px solid rgb(73, 73, 73);
-  border-right-color: rgb(36, 36, 36);
-  border-bottom-color: rgb(36, 36, 36);
+  background-color: rgb(30, 30, 90);
+  border: 2px solid rgb(50, 50, 150);
+  border-right-color: rgb(15, 15, 45);
+  border-bottom-color: rgb(15, 15, 45);
+
   font-size: 14px;
   padding: 6px 30px;
   text-decoration: none;
@@ -127,7 +129,7 @@ button[type="submit"]  {
   height: 36px;
 }
 button[type="submit"]:hover {
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(50, 50, 150);
 }
 
 @media screen and (min-width: 600px) {

@@ -53,11 +53,11 @@ function toggleSorting() {
 
 .sort {
   color: white;
-  background-color: rgb(53, 53, 53);
   border-radius: 30px;
-  border: 2px solid rgb(73, 73, 73);
-  border-right-color: rgb(36, 36, 36);
-  border-bottom-color: rgb(36, 36, 36);
+  background-color: rgb(30, 30, 90);
+  border: 2px solid rgb(50, 50, 150);
+  border-right-color: rgb(15, 15, 45);
+  border-bottom-color: rgb(15, 15, 45);
   font-size: 14px;
   padding: 6px 30px;
   text-decoration: none;
@@ -65,7 +65,7 @@ function toggleSorting() {
 }
 
 .sort:hover, .delete:hover {
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(50, 50, 150);
 }
 
 .sort-container {
@@ -82,7 +82,7 @@ function toggleSorting() {
   font-size: 14px;
   color: white;
   width: calc(100%);
-  background-color: rgb(36,36,36);
+  background-color: rgb(25,25,75);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -98,11 +98,12 @@ function toggleSorting() {
 
 .delete{
   color: white;
-  background-color: rgb(53, 53, 53);
+
   border-radius: 30px;
-  border: 2px solid rgb(73, 73, 73);
-  border-right-color: rgb(36, 36, 36);
-  border-bottom-color: rgb(36, 36, 36);
+  background-color: rgb(30, 30, 90);
+  border: 2px solid rgb(50, 50, 150);
+  border-right-color: rgb(15, 15, 45);
+  border-bottom-color: rgb(15, 15, 45);
   font-size: 14px;
   padding: 6px 30px;
   margin-left: auto;
